@@ -1,0 +1,367 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="4140" height="2340" viewBox="0 0 4140 2340" role="img" aria-labelledby="title desc">
+<title id="title">Service Blueprint AS-IS individual — Folha de Pagamento</title>
+<desc id="desc">Jornada atual da Prefeitura no e-Cidade. Seis etapas, seis camadas, três linhas separadoras, dependências documentadas e dois blocos auxiliares. PF-01 a PF-06 se relacionam a H-01 a H-06. Dados observados, documentados e inferidos são diferenciados. Não representa cenário futuro.</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#47677c" /></marker><marker id="reference-arrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#9b3e22" /></marker></defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#173247} .line{stroke:#47677c;stroke-width:2;fill:none} .flow{stroke:#47677c;stroke-width:3;fill:none;marker-end:url(#arrow)}</style>
+<rect width="4140" height="2340" fill="#f3f6fa" />
+<text x="40" y="55" font-size="36" font-weight="bold" style="fill:#173247">SERVICE BLUEPRINT AS-IS</text>
+<text x="40" y="96" font-size="27" font-weight="normal" style="fill:#173247">Folha de Pagamento • e-Cidade • área RH / módulo Pessoal</text>
+<text x="40" y="135" font-size="23" font-weight="normal" style="fill:#173247">Perspectiva institucional: Prefeitura | Usuário operacional: servidor municipal de Pessoal/RH</text>
+<text x="40" y="172" font-size="22" font-weight="normal" style="fill:#173247">Processo atual documentado + interfaces observadas. Execução integral não validada. Não representa arquitetura inspecionada.</text>
+<rect x="40" y="196" width="182" height="26" rx="5" fill="#e6f3ed" stroke="none" />
+<text x="48" y="214" font-size="18" font-weight="bold" style="fill:#126443">OBSERVADO</text>
+<rect x="900" y="196" width="182" height="26" rx="5" fill="#e7effb" stroke="none" />
+<text x="908" y="214" font-size="18" font-weight="bold" style="fill:#244f91">DOCUMENTADO</text>
+<rect x="1780" y="196" width="182" height="26" rx="5" fill="#fff2dc" stroke="none" />
+<text x="1788" y="214" font-size="18" font-weight="bold" style="fill:#8b570e">INFERIDO</text>
+<text x="238" y="214" font-size="21" font-weight="normal" style="fill:#173247">Tela ou interação registrada</text>
+<text x="1098" y="214" font-size="21" font-weight="normal" style="fill:#173247">BPMN AS-IS / Figura 1</text>
+<text x="1978" y="214" font-size="21" font-weight="normal" style="fill:#173247">Hipótese a verificar tecnicamente</text>
+<text x="40" y="259" font-size="22" font-weight="bold" style="fill:#173247">Fluxo principal do BPMN: somente o resultado concluído do cálculo prossegue para relatórios e conferência.</text>
+<rect x="40" y="286" width="220" height="105" rx="10" fill="#173247" stroke="none" />
+<text x="56" y="329" font-size="24" font-weight="bold" style="fill:#ffffff">CAMADAS</text>
+<text x="56" y="363" font-size="19" font-weight="normal" style="fill:#ffffff">Leitura vertical</text>
+<rect x="270" y="286" width="388" height="105" rx="10" fill="#173247" stroke="none" />
+<text x="286" y="317" font-size="20" font-weight="bold" style="fill:#a9d6ea">01</text>
+<text x="286" y="350" font-size="23" font-weight="bold" style="fill:#ffffff">Preparação do movimento</text>
+<path d="M659,338 L669,338" class="flow" />
+<rect x="670" y="286" width="388" height="105" rx="10" fill="#173247" stroke="none" />
+<text x="686" y="317" font-size="20" font-weight="bold" style="fill:#a9d6ea">02</text>
+<text x="686" y="350" font-size="23" font-weight="bold" style="fill:#ffffff">Cálculo do ponto fixo</text>
+<path d="M1059,338 L1069,338" class="flow" />
+<rect x="1070" y="286" width="388" height="105" rx="10" fill="#173247" stroke="none" />
+<text x="1086" y="317" font-size="20" font-weight="bold" style="fill:#a9d6ea">03</text>
+<text x="1086" y="350" font-size="23" font-weight="bold" style="fill:#ffffff">Definição da abrangência</text>
+<path d="M1459,338 L1469,338" class="flow" />
+<rect x="1470" y="286" width="388" height="105" rx="10" fill="#173247" stroke="none" />
+<text x="1486" y="317" font-size="20" font-weight="bold" style="fill:#a9d6ea">04</text>
+<text x="1486" y="350" font-size="23" font-weight="bold" style="fill:#ffffff">Processamento do cálculo</text>
+<path d="M1859,338 L1869,338" class="flow" />
+<rect x="1870" y="286" width="388" height="105" rx="10" fill="#173247" stroke="none" />
+<text x="1886" y="317" font-size="20" font-weight="bold" style="fill:#a9d6ea">05</text>
+<text x="1886" y="350" font-size="23" font-weight="bold" style="fill:#ffffff">Relatórios de conferência</text>
+<path d="M2259,338 L2269,338" class="flow" />
+<rect x="2270" y="286" width="388" height="105" rx="10" fill="#173247" stroke="none" />
+<text x="2286" y="317" font-size="20" font-weight="bold" style="fill:#a9d6ea">06</text>
+<text x="2286" y="350" font-size="23" font-weight="bold" style="fill:#ffffff">Conferência dos resultados</text>
+<rect x="40" y="410" width="220" height="214" rx="10" fill="#e1e8f0" stroke="none" />
+<text x="56" y="445" font-size="23" font-weight="bold" style="fill:#173247">Evidências</text>
+<text x="56" y="474" font-size="23" font-weight="bold" style="fill:#173247">visuais</text>
+<rect x="270" y="410" width="388" height="214" rx="10" fill="#ffffff" stroke="#d8e1ea" />
+<rect x="284" y="419" width="182" height="26" rx="5" fill="#e6f3ed" stroke="none" />
+<text x="292" y="437" font-size="18" font-weight="bold" style="fill:#126443">OBSERVADO</text>
+<text x="284" y="470" font-size="21" font-weight="normal" style="fill:#173247">Figura 3: Inicialização do Ponto.</text>
+<text x="284" y="496" font-size="21" font-weight="normal" style="fill:#173247">Figura 2: acesso ao módulo Pessoal.</text>
+<rect x="670" y="410" width="388" height="214" rx="10" fill="#ffffff" stroke="#d8e1ea" />
+<rect x="684" y="419" width="182" height="26" rx="5" fill="#e7effb" stroke="none" />
+<text x="692" y="437" font-size="18" font-weight="bold" style="fill:#244f91">DOCUMENTADO</text>
+<text x="684" y="470" font-size="21" font-weight="normal" style="fill:#173247">Atividade presente no BPMN. Tela</text>
+<text x="684" y="496" font-size="21" font-weight="normal" style="fill:#173247">específica não localizada.</text>
+<rect x="1070" y="410" width="388" height="214" rx="10" fill="#ffffff" stroke="#d8e1ea" />
+<rect x="1084" y="419" width="182" height="26" rx="5" fill="#e6f3ed" stroke="none" />
+<text x="1092" y="437" font-size="18" font-weight="bold" style="fill:#126443">OBSERVADO</text>
+<text x="1084" y="470" font-size="21" font-weight="normal" style="fill:#173247">Figuras 6 e 7: Cálculo Financeiro e</text>
+<text x="1084" y="496" font-size="21" font-weight="normal" style="fill:#173247">pesquisa. Associação com a etapa é</text>
+<text x="1084" y="522" font-size="21" font-weight="normal" style="fill:#173247">parcial, não validada.</text>
+<rect x="1470" y="410" width="388" height="214" rx="10" fill="#ffffff" stroke="#d8e1ea" />
+<rect x="1484" y="419" width="182" height="26" rx="5" fill="#e6f3ed" stroke="none" />
+<text x="1492" y="437" font-size="18" font-weight="bold" style="fill:#126443">OBSERVADO</text>
+<text x="1484" y="470" font-size="21" font-weight="normal" style="fill:#173247">Figura 6: somente configuração. Não</text>
+<text x="1484" y="496" font-size="21" font-weight="normal" style="fill:#173247">há resultado de cálculo comprovado.</text>
+<rect x="1870" y="410" width="388" height="214" rx="10" fill="#ffffff" stroke="#d8e1ea" />
+<rect x="1884" y="419" width="182" height="26" rx="5" fill="#e6f3ed" stroke="none" />
+<text x="1892" y="437" font-size="18" font-weight="bold" style="fill:#126443">OBSERVADO</text>
+<text x="1884" y="470" font-size="21" font-weight="normal" style="fill:#173247">Figuras 8 e 9: configuração de</text>
+<text x="1884" y="496" font-size="21" font-weight="normal" style="fill:#173247">Resumo da Folha e Folha Analítica /</text>
+<text x="1884" y="522" font-size="21" font-weight="normal" style="fill:#173247">Sintética.</text>
+<rect x="2270" y="410" width="388" height="214" rx="10" fill="#ffffff" stroke="#d8e1ea" />
+<rect x="2284" y="419" width="182" height="26" rx="5" fill="#e7effb" stroke="none" />
+<text x="2292" y="437" font-size="18" font-weight="bold" style="fill:#244f91">DOCUMENTADO</text>
+<text x="2284" y="470" font-size="21" font-weight="normal" style="fill:#173247">Resultado final previsto no BPMN.</text>
+<rect x="2284" y="493" width="182" height="26" rx="5" fill="#e6f3ed" stroke="none" />
+<text x="2292" y="511" font-size="18" font-weight="bold" style="fill:#126443">OBSERVADO</text>
+<text x="2284" y="544" font-size="21" font-weight="normal" style="fill:#173247">Relatórios finais e conferência não</text>
+<text x="2284" y="570" font-size="21" font-weight="normal" style="fill:#173247">observados.</text>
+<rect x="40" y="642" width="220" height="240" rx="10" fill="#e1e8f0" stroke="none" />
+<text x="56" y="677" font-size="23" font-weight="bold" style="fill:#173247">Ações do servidor</text>
+<rect x="270" y="642" width="388" height="240" rx="10" fill="#ffffff" stroke="#d8e1ea" />
+<rect x="284" y="651" width="182" height="26" rx="5" fill="#e7effb" stroke="none" />
+<text x="292" y="669" font-size="18" font-weight="bold" style="fill:#244f91">DOCUMENTADO</text>
+<text x="284" y="702" font-size="21" font-weight="normal" style="fill:#173247">Preparar ponto e lançamentos do</text>
+<text x="284" y="728" font-size="21" font-weight="normal" style="fill:#173247">movimento mensal.</text>
+<rect x="284" y="751" width="182" height="26" rx="5" fill="#e6f3ed" stroke="none" />
+<text x="292" y="769" font-size="18" font-weight="bold" style="fill:#126443">OBSERVADO</text>
+<text x="284" y="802" font-size="21" font-weight="normal" style="fill:#173247">Configuração da Inicialização do</text>
+<text x="284" y="828" font-size="21" font-weight="normal" style="fill:#173247">Ponto; operação não executada.</text>
+<rect x="670" y="642" width="388" height="240" rx="10" fill="#ffffff" stroke="#d8e1ea" />
+<rect x="684" y="651" width="182" height="26" rx="5" fill="#e7effb" stroke="none" />
+<text x="692" y="669" font-size="18" font-weight="bold" style="fill:#244f91">DOCUMENTADO</text>
+<text x="684" y="702" font-size="21" font-weight="normal" style="fill:#173247">Executar o cálculo do ponto fixo. Não</text>
+<text x="684" y="728" font-size="21" font-weight="normal" style="fill:#173247">foi observado em tela.</text>
+<rect x="1070" y="642" width="388" height="240" rx="10" fill="#ffffff" stroke="#d8e1ea" />
+<rect x="1084" y="651" width="182" height="26" rx="5" fill="#e7effb" stroke="none" />
+<text x="1092" y="669" font-size="18" font-weight="bold" style="fill:#244f91">DOCUMENTADO</text>
+<text x="1084" y="702" font-size="21" font-weight="normal" style="fill:#173247">Escolher Geral, Matrícula ou</text>
+<text x="1084" y="728" font-size="21" font-weight="normal" style="fill:#173247">Lotação; informar matrículas ou</text>
+<text x="1084" y="754" font-size="21" font-weight="normal" style="fill:#173247">lotação quando aplicável.</text>
+<rect x="1470" y="642" width="388" height="240" rx="10" fill="#ffffff" stroke="#d8e1ea" />
+<rect x="1484" y="651" width="182" height="26" rx="5" fill="#e7effb" stroke="none" />
+<text x="1492" y="669" font-size="18" font-weight="bold" style="fill:#244f91">DOCUMENTADO</text>
+<text x="1484" y="702" font-size="21" font-weight="normal" style="fill:#173247">Solicitar o processamento do cálculo</text>
+<text x="1484" y="728" font-size="21" font-weight="normal" style="fill:#173247">de salário no recorte definido.</text>
+<rect x="1870" y="642" width="388" height="240" rx="10" fill="#ffffff" stroke="#d8e1ea" />
+<rect x="1884" y="651" width="182" height="26" rx="5" fill="#e7effb" stroke="none" />
+<text x="1892" y="669" font-size="18" font-weight="bold" style="fill:#244f91">DOCUMENTADO</text>
+<text x="1884" y="702" font-size="21" font-weight="normal" style="fill:#173247">Emitir relatórios de conferência após</text>
+<text x="1884" y="728" font-size="21" font-weight="normal" style="fill:#173247">cálculo concluído.</text>
+<rect x="1884" y="751" width="182" height="26" rx="5" fill="#e6f3ed" stroke="none" />
+<text x="1892" y="769" font-size="18" font-weight="bold" style="fill:#126443">OBSERVADO</text>
+<text x="1884" y="802" font-size="21" font-weight="normal" style="fill:#173247">Somente configuração acessada;</text>
+<text x="1884" y="828" font-size="21" font-weight="normal" style="fill:#173247">emissão não executada.</text>
+<rect x="2270" y="642" width="388" height="240" rx="10" fill="#ffffff" stroke="#d8e1ea" />
+<rect x="2284" y="651" width="182" height="26" rx="5" fill="#e7effb" stroke="none" />
+<text x="2292" y="669" font-size="18" font-weight="bold" style="fill:#244f91">DOCUMENTADO</text>
+<text x="2284" y="702" font-size="21" font-weight="normal" style="fill:#173247">Conferir os resultados da folha;</text>
+<text x="2284" y="728" font-size="21" font-weight="normal" style="fill:#173247">encerrar com resultados conferidos.</text>
+<rect x="40" y="920" width="220" height="192" rx="10" fill="#e1e8f0" stroke="none" />
+<text x="56" y="955" font-size="23" font-weight="bold" style="fill:#173247">Frontstage</text>
+<rect x="270" y="920" width="388" height="192" rx="10" fill="#ffffff" stroke="#d8e1ea" />
+<rect x="284" y="929" width="182" height="26" rx="5" fill="#e6f3ed" stroke="none" />
+<text x="292" y="947" font-size="18" font-weight="bold" style="fill:#126443">OBSERVADO</text>
+<text x="284" y="980" font-size="21" font-weight="normal" style="fill:#173247">Competência, tipo de folha,</text>
+<text x="284" y="1006" font-size="21" font-weight="normal" style="fill:#173247">parâmetros e botão Inicializar ponto.</text>
+<rect x="670" y="920" width="388" height="192" rx="10" fill="#ffffff" stroke="#d8e1ea" />
+<rect x="684" y="929" width="182" height="26" rx="5" fill="#e6f3ed" stroke="none" />
+<text x="692" y="947" font-size="18" font-weight="bold" style="fill:#126443">OBSERVADO</text>
+<text x="684" y="980" font-size="21" font-weight="normal" style="fill:#173247">Não há interface específica</text>
+<text x="684" y="1006" font-size="21" font-weight="normal" style="fill:#173247">identificada para esta etapa.</text>
+<rect x="1070" y="920" width="388" height="192" rx="10" fill="#ffffff" stroke="#d8e1ea" />
+<rect x="1084" y="929" width="182" height="26" rx="5" fill="#e6f3ed" stroke="none" />
+<text x="1092" y="947" font-size="18" font-weight="bold" style="fill:#126443">OBSERVADO</text>
+<text x="1084" y="980" font-size="21" font-weight="normal" style="fill:#173247">Seleção, Tipo de Filtro e Matrícula;</text>
+<text x="1084" y="1006" font-size="21" font-weight="normal" style="fill:#173247">pesquisa com coluna Condição. Tipo</text>
+<text x="1084" y="1032" font-size="21" font-weight="normal" style="fill:#173247">de Resumo não comprova</text>
+<text x="1084" y="1058" font-size="21" font-weight="normal" style="fill:#173247">abrangência.</text>
+<rect x="1470" y="920" width="388" height="192" rx="10" fill="#ffffff" stroke="#d8e1ea" />
+<rect x="1484" y="929" width="182" height="26" rx="5" fill="#e6f3ed" stroke="none" />
+<text x="1492" y="947" font-size="18" font-weight="bold" style="fill:#126443">OBSERVADO</text>
+<text x="1484" y="980" font-size="21" font-weight="normal" style="fill:#173247">Botão Processar na configuração;</text>
+<text x="1484" y="1006" font-size="21" font-weight="normal" style="fill:#173247">resposta e andamento do cálculo</text>
+<text x="1484" y="1032" font-size="21" font-weight="normal" style="fill:#173247">não avaliados.</text>
+<rect x="1870" y="920" width="388" height="192" rx="10" fill="#ffffff" stroke="#d8e1ea" />
+<rect x="1884" y="929" width="182" height="26" rx="5" fill="#e6f3ed" stroke="none" />
+<text x="1892" y="947" font-size="18" font-weight="bold" style="fill:#126443">OBSERVADO</text>
+<text x="1884" y="980" font-size="21" font-weight="normal" style="fill:#173247">Filtros, critérios e botão Processar</text>
+<text x="1884" y="1006" font-size="21" font-weight="normal" style="fill:#173247">nas interfaces dos relatórios; saídas</text>
+<text x="1884" y="1032" font-size="21" font-weight="normal" style="fill:#173247">não observadas.</text>
+<rect x="2270" y="920" width="388" height="192" rx="10" fill="#ffffff" stroke="#d8e1ea" />
+<rect x="2284" y="929" width="182" height="26" rx="5" fill="#e6f3ed" stroke="none" />
+<text x="2292" y="947" font-size="18" font-weight="bold" style="fill:#126443">OBSERVADO</text>
+<text x="2284" y="980" font-size="21" font-weight="normal" style="fill:#173247">Não há saída de relatório validada.</text>
+<text x="2284" y="1006" font-size="21" font-weight="normal" style="fill:#173247">As Figuras 8 e 9 mostram apenas</text>
+<text x="2284" y="1032" font-size="21" font-weight="normal" style="fill:#173247">configuração.</text>
+<rect x="40" y="1150" width="220" height="266" rx="10" fill="#e1e8f0" stroke="none" />
+<text x="56" y="1185" font-size="23" font-weight="bold" style="fill:#173247">Backstage</text>
+<rect x="270" y="1150" width="388" height="266" rx="10" fill="#ffffff" stroke="#d8e1ea" />
+<rect x="284" y="1159" width="182" height="26" rx="5" fill="#e7effb" stroke="none" />
+<text x="292" y="1177" font-size="18" font-weight="bold" style="fill:#244f91">DOCUMENTADO</text>
+<text x="284" y="1210" font-size="21" font-weight="normal" style="fill:#173247">Preparação com cadastros,</text>
+<text x="284" y="1236" font-size="21" font-weight="normal" style="fill:#173247">parametrização, horas extras e</text>
+<text x="284" y="1262" font-size="21" font-weight="normal" style="fill:#173247">faltas. Produção dos pontos do</text>
+<text x="284" y="1288" font-size="21" font-weight="normal" style="fill:#173247">movimento.</text>
+<rect x="670" y="1150" width="388" height="266" rx="10" fill="#ffffff" stroke="#d8e1ea" />
+<rect x="684" y="1159" width="182" height="26" rx="5" fill="#e7effb" stroke="none" />
+<text x="692" y="1177" font-size="18" font-weight="bold" style="fill:#244f91">DOCUMENTADO</text>
+<text x="684" y="1210" font-size="21" font-weight="normal" style="fill:#173247">Cálculo do ponto fixo associado aos</text>
+<text x="684" y="1236" font-size="21" font-weight="normal" style="fill:#173247">pontos do movimento. Regras e</text>
+<text x="684" y="1262" font-size="21" font-weight="normal" style="fill:#173247">implementação não verificadas.</text>
+<rect x="1070" y="1150" width="388" height="266" rx="10" fill="#ffffff" stroke="#d8e1ea" />
+<rect x="1084" y="1159" width="182" height="26" rx="5" fill="#e7effb" stroke="none" />
+<text x="1092" y="1177" font-size="18" font-weight="bold" style="fill:#244f91">DOCUMENTADO</text>
+<text x="1084" y="1210" font-size="21" font-weight="normal" style="fill:#173247">Alternativas convergem para uma</text>
+<text x="1084" y="1236" font-size="21" font-weight="normal" style="fill:#173247">abrangência definida.</text>
+<rect x="1084" y="1259" width="182" height="26" rx="5" fill="#fff2dc" stroke="none" />
+<text x="1092" y="1277" font-size="18" font-weight="bold" style="fill:#8b570e">INFERIDO</text>
+<text x="1084" y="1310" font-size="21" font-weight="normal" style="fill:#173247">Aplicação dos critérios na rotina;</text>
+<text x="1084" y="1336" font-size="21" font-weight="normal" style="fill:#173247">correspondência com filtros da tela</text>
+<text x="1084" y="1362" font-size="21" font-weight="normal" style="fill:#173247">não confirmada.</text>
+<rect x="1470" y="1150" width="388" height="266" rx="10" fill="#ffffff" stroke="#d8e1ea" />
+<rect x="1484" y="1159" width="182" height="26" rx="5" fill="#e7effb" stroke="none" />
+<text x="1492" y="1177" font-size="18" font-weight="bold" style="fill:#244f91">DOCUMENTADO</text>
+<text x="1484" y="1210" font-size="21" font-weight="normal" style="fill:#173247">Cálculo utiliza pontos do movimento,</text>
+<text x="1484" y="1236" font-size="21" font-weight="normal" style="fill:#173247">cadastros e parametrização. Saídas:</text>
+<text x="1484" y="1262" font-size="21" font-weight="normal" style="fill:#173247">concluído ou interrupção por</text>
+<text x="1484" y="1288" font-size="21" font-weight="normal" style="fill:#173247">recursividade.</text>
+<rect x="1870" y="1150" width="388" height="266" rx="10" fill="#ffffff" stroke="#d8e1ea" />
+<rect x="1884" y="1159" width="182" height="26" rx="5" fill="#e7effb" stroke="none" />
+<text x="1892" y="1177" font-size="18" font-weight="bold" style="fill:#244f91">DOCUMENTADO</text>
+<text x="1884" y="1210" font-size="21" font-weight="normal" style="fill:#173247">Emissão de relatórios a partir do</text>
+<text x="1884" y="1236" font-size="21" font-weight="normal" style="fill:#173247">resultado financeiro concluído:</text>
+<text x="1884" y="1262" font-size="21" font-weight="normal" style="fill:#173247">resumo, folha analítica e sintética.</text>
+<rect x="2270" y="1150" width="388" height="266" rx="10" fill="#ffffff" stroke="#d8e1ea" />
+<rect x="2284" y="1159" width="182" height="26" rx="5" fill="#e7effb" stroke="none" />
+<text x="2292" y="1177" font-size="18" font-weight="bold" style="fill:#244f91">DOCUMENTADO</text>
+<text x="2284" y="1210" font-size="21" font-weight="normal" style="fill:#173247">Conferência pelo responsável com</text>
+<text x="2284" y="1236" font-size="21" font-weight="normal" style="fill:#173247">base nos relatórios. Não é</text>
+<text x="2284" y="1262" font-size="21" font-weight="normal" style="fill:#173247">comprovada validação automática do</text>
+<text x="2284" y="1288" font-size="21" font-weight="normal" style="fill:#173247">sistema.</text>
+<rect x="40" y="1454" width="220" height="266" rx="10" fill="#e1e8f0" stroke="none" />
+<text x="56" y="1489" font-size="23" font-weight="bold" style="fill:#173247">Processos de</text>
+<text x="56" y="1518" font-size="23" font-weight="bold" style="fill:#173247">suporte</text>
+<rect x="270" y="1454" width="388" height="266" rx="10" fill="#ffffff" stroke="#d8e1ea" />
+<rect x="284" y="1463" width="182" height="26" rx="5" fill="#e6f3ed" stroke="none" />
+<text x="292" y="1481" font-size="18" font-weight="bold" style="fill:#126443">OBSERVADO</text>
+<text x="284" y="1514" font-size="21" font-weight="normal" style="fill:#173247">Módulo Pessoal, área RH.</text>
+<rect x="284" y="1537" width="182" height="26" rx="5" fill="#e7effb" stroke="none" />
+<text x="292" y="1555" font-size="18" font-weight="bold" style="fill:#244f91">DOCUMENTADO</text>
+<text x="284" y="1588" font-size="21" font-weight="normal" style="fill:#173247">Cadastros e parametrização; dados</text>
+<text x="284" y="1614" font-size="21" font-weight="normal" style="fill:#173247">do ponto eletrônico, sem módulo de</text>
+<text x="284" y="1640" font-size="21" font-weight="normal" style="fill:#173247">origem identificado.</text>
+<rect x="670" y="1454" width="388" height="266" rx="10" fill="#ffffff" stroke="#d8e1ea" />
+<rect x="684" y="1463" width="182" height="26" rx="5" fill="#e7effb" stroke="none" />
+<text x="692" y="1481" font-size="18" font-weight="bold" style="fill:#244f91">DOCUMENTADO</text>
+<text x="684" y="1514" font-size="21" font-weight="normal" style="fill:#173247">Dados dos pontos do movimento.</text>
+<rect x="684" y="1537" width="182" height="26" rx="5" fill="#fff2dc" stroke="none" />
+<text x="692" y="1555" font-size="18" font-weight="bold" style="fill:#8b570e">INFERIDO</text>
+<text x="684" y="1588" font-size="21" font-weight="normal" style="fill:#173247">Rotina interna de cálculo;</text>
+<text x="684" y="1614" font-size="21" font-weight="normal" style="fill:#173247">componente técnico não identificado.</text>
+<rect x="1070" y="1454" width="388" height="266" rx="10" fill="#ffffff" stroke="#d8e1ea" />
+<rect x="1084" y="1463" width="182" height="26" rx="5" fill="#e6f3ed" stroke="none" />
+<text x="1092" y="1481" font-size="18" font-weight="bold" style="fill:#126443">OBSERVADO</text>
+<text x="1084" y="1514" font-size="21" font-weight="normal" style="fill:#173247">Configuração e pesquisa no módulo</text>
+<text x="1084" y="1540" font-size="21" font-weight="normal" style="fill:#173247">Pessoal.</text>
+<rect x="1084" y="1563" width="182" height="26" rx="5" fill="#fff2dc" stroke="none" />
+<text x="1092" y="1581" font-size="18" font-weight="bold" style="fill:#8b570e">INFERIDO</text>
+<text x="1084" y="1614" font-size="21" font-weight="normal" style="fill:#173247">Dados das seleções utilizados na</text>
+<text x="1084" y="1640" font-size="21" font-weight="normal" style="fill:#173247">configuração; estrutura técnica não</text>
+<text x="1084" y="1666" font-size="21" font-weight="normal" style="fill:#173247">inspecionada.</text>
+<rect x="1470" y="1454" width="388" height="266" rx="10" fill="#ffffff" stroke="#d8e1ea" />
+<rect x="1484" y="1463" width="182" height="26" rx="5" fill="#e7effb" stroke="none" />
+<text x="1492" y="1481" font-size="18" font-weight="bold" style="fill:#244f91">DOCUMENTADO</text>
+<text x="1484" y="1514" font-size="21" font-weight="normal" style="fill:#173247">Pontos do movimento, cadastros e</text>
+<text x="1484" y="1540" font-size="21" font-weight="normal" style="fill:#173247">parametrização.</text>
+<rect x="1484" y="1563" width="182" height="26" rx="5" fill="#fff2dc" stroke="none" />
+<text x="1492" y="1581" font-size="18" font-weight="bold" style="fill:#8b570e">INFERIDO</text>
+<text x="1484" y="1614" font-size="21" font-weight="normal" style="fill:#173247">Rotina interna de cálculo; limites,</text>
+<text x="1484" y="1640" font-size="21" font-weight="normal" style="fill:#173247">transações e componentes não</text>
+<text x="1484" y="1666" font-size="21" font-weight="normal" style="fill:#173247">inspecionados.</text>
+<rect x="1870" y="1454" width="388" height="266" rx="10" fill="#ffffff" stroke="#d8e1ea" />
+<rect x="1884" y="1463" width="182" height="26" rx="5" fill="#e6f3ed" stroke="none" />
+<text x="1892" y="1481" font-size="18" font-weight="bold" style="fill:#126443">OBSERVADO</text>
+<text x="1884" y="1514" font-size="21" font-weight="normal" style="fill:#173247">Relatórios Financeiros é menu do</text>
+<text x="1884" y="1540" font-size="21" font-weight="normal" style="fill:#173247">módulo Pessoal, não evidência da</text>
+<text x="1884" y="1566" font-size="21" font-weight="normal" style="fill:#173247">área Financeira.</text>
+<rect x="1884" y="1589" width="182" height="26" rx="5" fill="#e7effb" stroke="none" />
+<text x="1892" y="1607" font-size="18" font-weight="bold" style="fill:#244f91">DOCUMENTADO</text>
+<text x="1884" y="1640" font-size="21" font-weight="normal" style="fill:#173247">Resultado financeiro do cálculo.</text>
+<rect x="2270" y="1454" width="388" height="266" rx="10" fill="#ffffff" stroke="#d8e1ea" />
+<rect x="2284" y="1463" width="182" height="26" rx="5" fill="#e7effb" stroke="none" />
+<text x="2292" y="1481" font-size="18" font-weight="bold" style="fill:#244f91">DOCUMENTADO</text>
+<text x="2284" y="1514" font-size="21" font-weight="normal" style="fill:#173247">Resumo da folha, folha analítica e</text>
+<text x="2284" y="1540" font-size="21" font-weight="normal" style="fill:#173247">folha sintética como apoio à</text>
+<text x="2284" y="1566" font-size="21" font-weight="normal" style="fill:#173247">conferência; nenhum módulo</text>
+<text x="2284" y="1592" font-size="21" font-weight="normal" style="fill:#173247">adicional identificado.</text>
+<rect x="40" y="1738" width="220" height="266" rx="10" fill="#e1e8f0" stroke="none" />
+<text x="56" y="1773" font-size="23" font-weight="bold" style="fill:#173247">Pontos de falha</text>
+<rect x="270" y="1738" width="388" height="266" rx="10" fill="#fff6ed" stroke="#d8e1ea" />
+<rect x="284" y="1747" width="182" height="26" rx="5" fill="#e6f3ed" stroke="none" />
+<text x="292" y="1765" font-size="18" font-weight="bold" style="fill:#126443">OBSERVADO</text>
+<text x="284" y="1798" font-size="21" font-weight="normal" style="fill:#173247">PF-04 / H-04: efeitos da inicialização</text>
+<text x="284" y="1824" font-size="21" font-weight="normal" style="fill:#173247">não explicados previamente.</text>
+<text x="284" y="1850" font-size="21" font-weight="normal" style="fill:#173247">Severidade 3, preliminar.</text>
+<rect x="284" y="1873" width="182" height="26" rx="5" fill="#e7effb" stroke="none" />
+<text x="292" y="1891" font-size="18" font-weight="bold" style="fill:#244f91">DOCUMENTADO</text>
+<text x="284" y="1924" font-size="21" font-weight="normal" style="fill:#173247">G2: risco de retrabalho ao</text>
+<text x="284" y="1950" font-size="21" font-weight="normal" style="fill:#173247">reinicializar o ponto.</text>
+<rect x="670" y="1738" width="388" height="266" rx="10" fill="#fff6ed" stroke="#d8e1ea" />
+<rect x="684" y="1747" width="182" height="26" rx="5" fill="#e6f3ed" stroke="none" />
+<text x="692" y="1765" font-size="18" font-weight="bold" style="fill:#126443">OBSERVADO</text>
+<text x="684" y="1798" font-size="21" font-weight="normal" style="fill:#173247">Nenhum problema heurístico</text>
+<text x="684" y="1824" font-size="21" font-weight="normal" style="fill:#173247">atribuído. H-01 fica no bloco auxiliar,</text>
+<text x="684" y="1850" font-size="21" font-weight="normal" style="fill:#173247">sem equivalência confirmada com</text>
+<text x="684" y="1876" font-size="21" font-weight="normal" style="fill:#173247">esta etapa.</text>
+<rect x="1070" y="1738" width="388" height="266" rx="10" fill="#fff6ed" stroke="#d8e1ea" />
+<rect x="1084" y="1747" width="182" height="26" rx="5" fill="#e6f3ed" stroke="none" />
+<text x="1092" y="1765" font-size="18" font-weight="bold" style="fill:#126443">OBSERVADO</text>
+<text x="1084" y="1798" font-size="21" font-weight="normal" style="fill:#173247">PF-02 / H-02: orientação insuficiente</text>
+<text x="1084" y="1824" font-size="21" font-weight="normal" style="fill:#173247">nos campos. PF-03 / H-03:</text>
+<text x="1084" y="1850" font-size="21" font-weight="normal" style="fill:#173247">condições técnicas e truncadas.</text>
+<text x="1084" y="1876" font-size="21" font-weight="normal" style="fill:#173247">Severidade 2 em ambos.</text>
+<rect x="1470" y="1738" width="388" height="266" rx="10" fill="#fff6ed" stroke="#d8e1ea" />
+<rect x="1484" y="1747" width="182" height="26" rx="5" fill="#e7effb" stroke="none" />
+<text x="1492" y="1765" font-size="18" font-weight="bold" style="fill:#244f91">DOCUMENTADO</text>
+<text x="1484" y="1798" font-size="21" font-weight="normal" style="fill:#173247">G3: risco de interrupção por</text>
+<text x="1484" y="1824" font-size="21" font-weight="normal" style="fill:#173247">dependência circular. G1:</text>
+<text x="1484" y="1850" font-size="21" font-weight="normal" style="fill:#173247">demora/complexidade relatada. Sem</text>
+<text x="1484" y="1876" font-size="21" font-weight="normal" style="fill:#173247">equivalência heurística comprovada.</text>
+<rect x="1870" y="1738" width="388" height="266" rx="10" fill="#fff6ed" stroke="#d8e1ea" />
+<rect x="1884" y="1747" width="182" height="26" rx="5" fill="#e6f3ed" stroke="none" />
+<text x="1892" y="1765" font-size="18" font-weight="bold" style="fill:#126443">OBSERVADO</text>
+<text x="1884" y="1798" font-size="21" font-weight="normal" style="fill:#173247">PF-06 / H-06: filtros sem hierarquia</text>
+<text x="1884" y="1824" font-size="21" font-weight="normal" style="fill:#173247">visual clara no Resumo da Folha.</text>
+<text x="1884" y="1850" font-size="21" font-weight="normal" style="fill:#173247">Severidade 2. Nenhum problema</text>
+<text x="1884" y="1876" font-size="21" font-weight="normal" style="fill:#173247">novo na Figura 9.</text>
+<rect x="2270" y="1738" width="388" height="266" rx="10" fill="#fff6ed" stroke="#d8e1ea" />
+<rect x="2284" y="1747" width="182" height="26" rx="5" fill="#e7effb" stroke="none" />
+<text x="2292" y="1765" font-size="18" font-weight="bold" style="fill:#244f91">DOCUMENTADO</text>
+<text x="2284" y="1798" font-size="21" font-weight="normal" style="fill:#173247">G4: dificuldade relatada de</text>
+<text x="2284" y="1824" font-size="21" font-weight="normal" style="fill:#173247">diagnóstico/conferência. Não há</text>
+<text x="2284" y="1850" font-size="21" font-weight="normal" style="fill:#173247">causa técnica demonstrada nem</text>
+<text x="2284" y="1876" font-size="21" font-weight="normal" style="fill:#173247">novo problema heurístico.</text>
+<path d="M40,901 H2670" stroke="#60798c" stroke-width="2" stroke-dasharray="10 7" />
+<rect x="48" y="888" width="440" height="25" rx="0" fill="#f3f6fa" stroke="none" />
+<text x="56" y="907" font-size="18" font-weight="bold" style="fill:#173247">LINHA DE INTERAÇÃO</text>
+<path d="M635,887 V914" stroke="#8297a8" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+<path d="M1035,887 V914" stroke="#8297a8" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+<path d="M1435,887 V914" stroke="#8297a8" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+<path d="M1835,887 V914" stroke="#8297a8" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+<path d="M2235,887 V914" stroke="#8297a8" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+<path d="M2635,887 V914" stroke="#8297a8" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+<path d="M40,1131 H2670" stroke="#60798c" stroke-width="2" stroke-dasharray="10 7" />
+<rect x="48" y="1118" width="440" height="25" rx="0" fill="#f3f6fa" stroke="none" />
+<text x="56" y="1137" font-size="18" font-weight="bold" style="fill:#173247">LINHA DE VISIBILIDADE</text>
+<path d="M635,1117 V1144" stroke="#8297a8" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+<path d="M1035,1117 V1144" stroke="#8297a8" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+<path d="M1435,1117 V1144" stroke="#8297a8" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+<path d="M1835,1117 V1144" stroke="#8297a8" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+<path d="M2235,1117 V1144" stroke="#8297a8" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+<path d="M2635,1117 V1144" stroke="#8297a8" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+<path d="M40,1435 H2670" stroke="#60798c" stroke-width="2" stroke-dasharray="10 7" />
+<rect x="48" y="1422" width="440" height="25" rx="0" fill="#f3f6fa" stroke="none" />
+<text x="56" y="1441" font-size="18" font-weight="bold" style="fill:#173247">LINHA DE INTERAÇÃO INTERNA</text>
+<path d="M635,1421 V1448" stroke="#8297a8" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+<path d="M1035,1421 V1448" stroke="#8297a8" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+<path d="M1435,1421 V1448" stroke="#8297a8" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+<path d="M1835,1421 V1448" stroke="#8297a8" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+<path d="M2235,1421 V1448" stroke="#8297a8" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+<path d="M2635,1421 V1448" stroke="#8297a8" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+<g transform="translate(2720 -1684)"><rect x="40" y="2144" width="1310" height="350" rx="10" fill="#ffffff" stroke="#c7d6e3" />
+<text x="58" y="2180" font-size="24" font-weight="bold" style="fill:#173247">Processamento de Dados do Ponto • PF-01 / H-01</text>
+<rect x="58" y="2195" width="177" height="25" rx="4" fill="#e6f3ed" stroke="none" />
+<text x="64" y="2212" font-size="17" font-weight="bold" style="fill:#126443">OBSERVADO</text>
+<text x="250" y="2212" font-size="20" font-weight="normal" style="fill:#173247">Evidência e ação: Figuras 4 e 5; solicitar processamento para a competência.</text>
+<rect x="58" y="2232" width="177" height="25" rx="4" fill="#e6f3ed" stroke="none" />
+<text x="64" y="2249" font-size="17" font-weight="bold" style="fill:#126443">OBSERVADO</text>
+<text x="250" y="2249" font-size="20" font-weight="normal" style="fill:#173247">Frontstage: ausência de registros; orienta verificar cálculo salarial, sem indicar onde. Severidade 2.</text>
+<rect x="58" y="2269" width="177" height="25" rx="4" fill="#fff2dc" stroke="none" />
+<text x="64" y="2286" font-size="17" font-weight="bold" style="fill:#8b570e">INFERIDO</text>
+<text x="250" y="2286" font-size="20" font-weight="normal" style="fill:#173247">Backstage: verificação dos dados disponíveis; consulta interna não inspecionada.</text>
+<rect x="58" y="2306" width="177" height="25" rx="4" fill="#e6f3ed" stroke="none" />
+<text x="64" y="2323" font-size="17" font-weight="bold" style="fill:#126443">OBSERVADO</text>
+<text x="250" y="2323" font-size="20" font-weight="normal" style="fill:#173247">Suporte: módulo Pessoal. Dependência funcional sugerida pela mensagem, sem cruzamento técnico comprovado.</text>
+</g><g transform="translate(1400 -1014)"><rect x="1360" y="2144" width="1310" height="350" rx="10" fill="#ffffff" stroke="#c7d6e3" />
+<text x="1378" y="2180" font-size="24" font-weight="bold" style="fill:#173247">Fechamento da Folha • PF-05 / H-05</text>
+<rect x="1378" y="2195" width="177" height="25" rx="4" fill="#e6f3ed" stroke="none" />
+<text x="1384" y="2212" font-size="17" font-weight="bold" style="fill:#126443">OBSERVADO</text>
+<text x="1570" y="2212" font-size="20" font-weight="normal" style="fill:#173247">Evidência e ação: Figura 10; acesso à configuração, sem execução comprovada.</text>
+<rect x="1378" y="2232" width="177" height="25" rx="4" fill="#e6f3ed" stroke="none" />
+<text x="1384" y="2249" font-size="17" font-weight="bold" style="fill:#126443">OBSERVADO</text>
+<text x="1570" y="2249" font-size="20" font-weight="normal" style="fill:#173247">Frontstage: períodos e campo de pagamento; botão “D” sem finalidade explícita. Severidade 1.</text>
+<rect x="1378" y="2269" width="177" height="25" rx="4" fill="#fff2dc" stroke="none" />
+<text x="1384" y="2286" font-size="17" font-weight="bold" style="fill:#8b570e">INFERIDO</text>
+<text x="1570" y="2286" font-size="20" font-weight="normal" style="fill:#173247">Backstage: tratamento dos parâmetros de fechamento; efeitos não verificados.</text>
+<rect x="1378" y="2306" width="177" height="25" rx="4" fill="#e6f3ed" stroke="none" />
+<text x="1384" y="2323" font-size="17" font-weight="bold" style="fill:#126443">OBSERVADO</text>
+<text x="1570" y="2323" font-size="20" font-weight="normal" style="fill:#173247">Suporte: Rotinas Mensais do módulo Pessoal; não integra a sequência principal confirmada.</text>
+</g><text x="2760" y="330" font-size="28" font-weight="bold" style="fill:#173247">FUNCIONALIDADES AUXILIARES</text><text x="2760" y="368" font-size="23" font-weight="normal" style="fill:#173247">Posição não confirmada no fluxo principal do BPMN.</text><text x="2760" y="403" font-size="23" font-weight="normal" style="fill:#173247">Pessoal / RH — não são módulos técnicos adicionais.</text><path d="M3400,810 V925" fill="none" stroke="#9b3e22" stroke-width="3" marker-end="url(#reference-arrow)" stroke-dasharray="12 9" /><text x="2760" y="857" font-size="22" font-weight="bold" style="fill:#9b3e22">H-01: referência indicada pela mensagem [OBSERVADO]</text><text x="2760" y="890" font-size="22" font-weight="normal" style="fill:#173247">Não é chamada técnica comprovada nem atalho observado.</text><rect x="2760" y="935" width="1310" height="120" rx="10" fill="#fff4e8" stroke="#c7d6e3" /><text x="2780" y="974" font-size="25" font-weight="bold" style="fill:#173247">Cálculo Financeiro — Figura 6</text><text x="2780" y="1010" font-size="21" font-weight="normal" style="fill:#173247">Referência de navegação da análise; mesma interface das colunas 3 e 4.</text><text x="2780" y="1040" font-size="21" font-weight="normal" style="fill:#173247">A mensagem não nomeia a tela nem demonstra recursividade G3.</text><text x="2760" y="1608" font-size="26" font-weight="bold" style="fill:#173247">LEITURA DAS CONEXÕES</text><path d="M2770,1650 H2930" fill="none" stroke="#47677c" stroke-width="3" marker-end="url(#arrow)" /><text x="2960" y="1658" font-size="22" font-weight="normal" style="fill:#173247">Dependência de dados do BPMN [DOCUMENTADO]</text><path d="M2770,1710 H2930" fill="none" stroke="#9b3e22" stroke-width="3" marker-end="url(#reference-arrow)" stroke-dasharray="12 9" /><text x="2960" y="1718" font-size="22" font-weight="normal" style="fill:#173247">Referência da mensagem H-01 [OBSERVADO]</text><text x="2760" y="1780" font-size="23" font-weight="bold" style="fill:#173247">G2 + PF-04/H-04: prevenção de erros na preparação.</text><text x="2760" y="1820" font-size="22" font-weight="normal" style="fill:#173247">Risco de retrabalho; sem perda de dados comprovada.</text><text x="2760" y="1880" font-size="22" font-weight="normal" style="fill:#173247">G3: interrupção por recursividade, documentada no BPMN.</text><text x="2760" y="1920" font-size="22" font-weight="bold" style="fill:#173247">Sem correspondência heurística comprovada.</text><text x="2760" y="1960" font-size="22" font-weight="normal" style="fill:#173247">H-01 não demonstra dependência circular.</text><text x="2760" y="2020" font-size="22" font-weight="normal" style="fill:#173247">G1 e G4 são relatos do grupo, não reproduzidos.</text><text x="2760" y="2070" font-size="22" font-weight="normal" style="fill:#173247">Inferências de backstage não são arquitetura validada.</text><rect x="40" y="2020" width="2630" height="250" rx="10" fill="#e7edf5" stroke="#c7d6e3" /><text x="58" y="2055" font-size="23" font-weight="bold" style="fill:#173247">DEPENDÊNCIAS DE DADOS [DOCUMENTADO] — não representam chamadas entre módulos</text><rect x="65" y="2080" width="450" height="55" rx="10" fill="#ffffff" stroke="#c7d6e3" /><text x="77" y="2115" font-size="21" font-weight="bold" style="fill:#173247">Cadastros e parametrização</text><rect x="65" y="2160" width="450" height="55" rx="10" fill="#ffffff" stroke="#c7d6e3" /><text x="77" y="2195" font-size="21" font-weight="bold" style="fill:#173247">Ponto eletrônico: extras e faltas</text><rect x="605" y="2160" width="340" height="55" rx="10" fill="#ffffff" stroke="#c7d6e3" /><text x="617" y="2195" font-size="21" font-weight="bold" style="fill:#173247">Preparação</text><rect x="1070" y="2160" width="390" height="55" rx="10" fill="#ffffff" stroke="#c7d6e3" /><text x="1082" y="2195" font-size="21" font-weight="bold" style="fill:#173247">Pontos do movimento</text><rect x="1620" y="2080" width="450" height="55" rx="10" fill="#ffffff" stroke="#c7d6e3" /><text x="1632" y="2115" font-size="21" font-weight="bold" style="fill:#173247">Cálculo: ponto fixo / salário</text><rect x="2170" y="2080" width="450" height="55" rx="10" fill="#ffffff" stroke="#c7d6e3" /><text x="2182" y="2115" font-size="21" font-weight="bold" style="fill:#173247">Resultado financeiro concluído</text><rect x="2170" y="2160" width="450" height="55" rx="10" fill="#ffffff" stroke="#c7d6e3" /><text x="2182" y="2195" font-size="21" font-weight="bold" style="fill:#173247">Relatórios → conferência</text><path d="M515,2107 H1620" fill="none" stroke="#47677c" stroke-width="3" marker-end="url(#arrow)" /><path d="M515,2107 H570 V2187 H605" fill="none" stroke="#47677c" stroke-width="3" marker-end="url(#arrow)" /><path d="M515,2187 H605" fill="none" stroke="#47677c" stroke-width="3" marker-end="url(#arrow)" /><path d="M945,2187 H1070" fill="none" stroke="#47677c" stroke-width="3" marker-end="url(#arrow)" /><path d="M1460,2187 H1560 V2107 H1620" fill="none" stroke="#47677c" stroke-width="3" marker-end="url(#arrow)" /><path d="M2070,2107 H2170" fill="none" stroke="#47677c" stroke-width="3" marker-end="url(#arrow)" /><path d="M2395,2135 V2160" fill="none" stroke="#47677c" stroke-width="3" marker-end="url(#arrow)" /><path d="M1845,2135 V2220" fill="none" stroke="#47677c" stroke-width="3" marker-end="url(#arrow)" /><text x="1490" y="2255" font-size="21" font-weight="normal" style="fill:#173247">Alternativa: interrupção por recursividade → fim (G3)</text><text x="40" y="2300" font-size="22" font-weight="normal" style="fill:#173247">Fonte: BPMN AS-IS do grupo (Figura 1), capturas (Figuras 2–10) e avaliação heurística. Elaboração individual com apoio de IA • 2026</text><text x="40" y="2330" font-size="21" font-weight="normal" style="fill:#173247">Cenário atual, sem TO-BE. Execução integral, integrações, transações e efeitos das rotinas não validados tecnicamente.</text></svg>

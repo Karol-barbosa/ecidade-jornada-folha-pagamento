@@ -1,0 +1,26 @@
+@page { size: A4; margin: 20mm 18mm; }
+@page bpmn { size: A3 landscape; margin: 12mm; }
+@page blueprint { size: 594mm 420mm; margin: 12mm; }
+@page proposta { size: A4; margin: 18mm; }
+body { font-family: Arial, Helvetica, sans-serif; color: #172f42; font-size: 11pt; line-height: 1.4; margin: 0 auto; padding: 20px; max-width: 1100px; }
+h1 { font-size: 19pt; } h2 { font-size: 14pt; } h3 { font-size: 12pt; }
+h1,h2,h3 { break-after: avoid; } p { orphans: 3; widows: 3; }
+table { border-collapse: collapse; width: 100%; font-size: 9pt; margin: 12px 0; }
+th,td { border: 1px solid #cbd5df; padding: 6px; vertical-align: top; } th { background: #edf3f8; }
+img { max-width: 100%; height: auto; } a { color: #244f91; }
+.pagina-bpmn,.pagina-blueprint { break-before: page; break-after: page; break-inside: avoid; }
+.pagina-bpmn { page: bpmn; } .pagina-blueprint { page: blueprint; }
+.pagina-proposta { page: proposta; break-before: page; break-after: page; font-size: 10.5pt; line-height: 1.28; }
+.pagina-proposta h1 { font-size: 17pt; margin: 0 0 12pt; }
+.pagina-proposta h2 { font-size: 12pt; margin: 11pt 0 6pt; }
+.pagina-proposta p { margin: 0 0 7pt; }
+@media print {
+ body { max-width: none; padding: 0; margin: 0; }
+ .pagina-bpmn img { width: 396mm; max-height: 245mm; object-fit: contain; }
+ .pagina-blueprint img { width: 570mm; max-height: 365mm; object-fit: contain; }
+ .pagina-bpmn p,.pagina-blueprint p { margin: 0 0 4mm; }
+ .pagina-bpmn em,.pagina-blueprint em { font-size: 10pt; }
+ .pagina-proposta { width: 174mm; }
+ table { font-size: 8pt; } tr { break-inside: avoid; }
+ a { color: inherit; text-decoration: none; }
+}
