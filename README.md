@@ -1,5 +1,7 @@
 # Ponderada de UX — Folha de Pagamento no e-Cidade
 
+**Leitura:** [Jornada e tarefa](#1-jornada-e-tarefa) · [Avaliação heurística](#2-avaliação-heurística) · [Service Blueprint](#3-service-blueprint-as-is) · [Proposta de corte](#4-proposta-de-extração-do-primeiro-microsserviço) · [Uso de IA](#5-declaração-de-uso-de-ia) · [Referências](#6-referências)
+
 # 1. Jornada e Tarefa
 
 ## 1.1. Contextualização do e-Cidade e da área de RH
@@ -17,6 +19,8 @@ Minha escolha individual foi **Folha de Pagamento, na perspectiva da Prefeitura*
 O BPMN AS-IS do grupo (Figura 1) orienta a avaliação heurística, o Service Blueprint individual e a proposta de extração.
 
 <div class="pagina-bpmn">
+
+<a id="figura-1"></a>
 
 ![Figura 1 — BPMN AS-IS da folha de pagamento](assets/bpmn/As-Is-rh.jpeg)
 
@@ -42,6 +46,22 @@ O BPMN AS-IS do grupo (Figura 1) orienta a avaliação heurística, o Service Bl
 6. Conferir os resultados da folha.
 
 O BPMN representa o processo de referência. A correspondência entre suas etapas e as telas localizadas está na tabela da seção 1.4.
+
+### 1.3.1. Jobs to Be Done — resultado pretendido
+
+O Jobs to Be Done explicita o progresso que o servidor busca alcançar na rotina, relacionando o contexto de execução ao resultado esperado pela Prefeitura. A formulação abaixo é uma síntese analítica do BPMN AS-IS e da avaliação heurística, não uma fala coletada em entrevista.
+
+> **Quando** preciso preparar a folha de pagamento de uma competência mensal, **quero** organizar os dados do movimento, realizar o cálculo e conferir seus resultados com clareza sobre os parâmetros e a continuidade entre as etapas, **para** concluir a conferência da folha que sustenta a rotina administrativa da Prefeitura.
+
+| Aspecto do job | Formulação para a jornada | Relação com as evidências |
+| --- | --- | --- |
+| Contexto | Preparação da folha de uma competência mensal pelo servidor de Pessoal/RH. | BPMN AS-IS (Figura 1) e campos de competência nas telas. |
+| Progresso funcional | Passar dos dados do movimento aos resultados calculados e conferidos. | Sequência do BPMN e dependências de dados do blueprint (Figura 11). |
+| Clareza na execução | Reconhecer como configurar a operação e onde verificar o cálculo para prosseguir. | H-01/PF-01: orientação da transição; H-02/PF-02 e H-03/PF-03: interpretação dos parâmetros e das seleções. |
+| Prevenção de retrabalho | Compreender os efeitos da inicialização antes de solicitar a operação. | H-04/PF-04 e risco G2 documentado no BPMN, sem perda de dados comprovada. |
+| Resultado institucional | Encerrar a jornada com os resultados da folha conferidos. | Evento final do BPMN; resultado não validado na navegação pelo ambiente de demonstração. |
+
+Essa leitura reforça que o objetivo do usuário não se limita a acionar o cálculo: envolve chegar à conferência com continuidade e compreensão das operações. Na seção 4, a extração do processamento é examinada como apoio a esse resultado, sem substituir as melhorias de interface. A formulação deverá ser confrontada com a experiência de servidores para validar as necessidades interpretadas; dimensões emocionais e sociais não foram atribuídas sem pesquisa com usuários.
 
 ## 1.4. Mapeamento visual da jornada no e-Cidade
 
@@ -70,6 +90,8 @@ O servidor seleciona a instituição, a área de Recursos Humanos e o módulo Pe
 
 **Caminho:** 1 - PREFEITURA DBSELLER → DB:RECURSOSHUMANOS → Pessoal.
 
+<a id="figura-2"></a>
+
 ![Figura 2 — Acesso ao módulo Pessoal](assets/prints/04-modulos-recursos-humanos.png)
 
 *Figura 2 — Acesso ao módulo Pessoal. Fonte: captura do ambiente de demonstração do e-Cidade (2026).*
@@ -83,6 +105,8 @@ O servidor seleciona a instituição, a área de Recursos Humanos e o módulo Pe
 O servidor acessa a Inicialização do Ponto e configura a competência, o tipo de folha e os parâmetros disponíveis antes de solicitar a operação, relacionada à preparação do movimento mensal.
 
 **Caminho:** Procedimentos → Rotinas Mensais → Inicialização do Ponto.
+
+<a id="figura-3"></a>
 
 ![Figura 3 — Inicialização do Ponto](assets/prints/destaques/24-inicializacao-do-ponto-destaque.png)
 
@@ -98,9 +122,13 @@ O servidor verifica a competência e solicita o processamento dos dados do ponto
 
 **Caminho:** Procedimentos → Manutenção do Ponto → Processamento de Dados do Ponto.
 
+<a id="figura-4"></a>
+
 ![Figura 4 — Processamento de Dados do Ponto](assets/prints/08-processamento-dados-ponto.png)
 
 *Figura 4 — Processamento de Dados do Ponto. Fonte: captura do ambiente de demonstração do e-Cidade (2026).*
+
+<a id="figura-5"></a>
 
 ![Figura 5 — Mensagem de ausência de registros](assets/prints/destaques/09-mensagem-nenhum-registro-destaque.png)
 
@@ -116,9 +144,13 @@ O servidor configura os campos disponíveis no Cálculo Financeiro. A análise d
 
 **Caminho:** Procedimentos → Cálculo Financeiro; no formulário, pesquisa pelo campo Seleção.
 
+<a id="figura-6"></a>
+
 ![Figura 6 — Configuração do Cálculo Financeiro](assets/prints/destaques/13-calculo-financeiro-selecionados-destaque.png)
 
 *Figura 6 — Configuração do Cálculo Financeiro. Fonte: captura do ambiente de demonstração do e-Cidade (2026); destaque editorial de H-02 sobre a captura original.*
+
+<a id="figura-7"></a>
 
 ![Figura 7 — Pesquisa de seleções cadastradas](assets/prints/destaques/18-pesquisa-selecao-destaque.png)
 
@@ -136,6 +168,8 @@ Para preparar um relatório relacionado à conferência, o servidor acessa o Res
 
 **Caminho:** Relatórios → Relatórios Financeiros → Resumo da Folha.
 
+<a id="figura-8"></a>
+
 ![Figura 8 — Configuração do Resumo da Folha](assets/prints/destaques/29-resumo-da-folha-destaque.png)
 
 *Figura 8 — Configuração do Resumo da Folha. Fonte: captura do ambiente de demonstração do e-Cidade (2026); destaque editorial de H-06 sobre a captura original.*
@@ -149,6 +183,8 @@ Para preparar um relatório relacionado à conferência, o servidor acessa o Res
 O servidor acessa a funcionalidade para configurar um dos relatórios previstos para apoiar a conferência. A interface oferece, entre outros parâmetros, competência, tipo de folha e tipo de impressão.
 
 **Caminho:** Relatórios → Relatórios Financeiros → Folha Analítica / Sintética.
+
+<a id="figura-9"></a>
 
 ![Figura 9 — Configuração da Folha Analítica / Sintética](assets/prints/30-folha-analitica-sintetica.png)
 
@@ -165,6 +201,8 @@ Durante a navegação, foi identificada a funcionalidade de Fechamento da Folha,
 Como o fechamento não foi identificado entre as atividades explicitamente descritas no BPMN AS-IS utilizado nesta avaliação, a tela foi considerada uma funcionalidade relacionada à rotina mensal, sem ser incorporada à sequência principal da jornada.
 
 **Caminho:** Procedimentos → Rotinas Mensais → Fechamento da Folha.
+
+<a id="figura-10"></a>
 
 ![Figura 10 — Fechamento da Folha](assets/prints/destaques/26-fechamento-da-folha-destaque.png)
 
@@ -237,14 +275,16 @@ A tabela apresenta os problemas observados nas interfaces relacionadas à jornad
 
 | ID | Tela / etapa | Elemento | Heurística violada | Problema identificado | Severidade | Evidência |
 |---|---|---|---|---|---|---|
-| **H-01** | Processamento de Dados do Ponto | Mensagem de retorno | H9 — Recuperação de erros | Informa que nenhum registro foi encontrado e orienta verificar o cálculo salarial, sem indicar onde realizar essa verificação. | **2 — Menor** | Figura 5 |
-| **H-02** | Cálculo Financeiro | Seleção, Tipo de Filtro e Matrícula | H6 — Reconhecimento em vez de memorização | Campos de configuração sem orientações visíveis suficientes sobre o significado das opções e sua combinação. | **2 — Menor** | Figura 6 |
-| **H-03** | Pesquisa de Seleção | Coluna Condição | H2 — Correspondência com o mundo real | Expressões técnicas e conteúdo truncado dificultam a compreensão dos critérios de seleção. | **2 — Menor** | Figura 7 |
-| **H-04** | Inicialização do Ponto | Botão Inicializar Ponto | H5 — Prevenção de erros | Não apresenta uma explicação visível, antes da execução, sobre quais dados serão afetados pela inicialização. | **3 — Maior (preliminar)** | Figura 3 |
-| **H-05** | Fechamento da Folha (funcionalidade relacionada) | Botão “D” | H2 — Correspondência com o mundo real | O botão possui apenas uma letra, sem identificação clara de sua finalidade. | **1 — Cosmético** | Figura 10 |
-| **H-06** | Resumo da Folha | Filtros de configuração | H8 — Estética e design minimalista | Diversos filtros aparecem simultaneamente, sem diferenciação visual clara entre campos obrigatórios e opcionais. | **2 — Menor** | Figura 8 |
+| [**H-01**](#h-01) | Processamento de Dados do Ponto | Mensagem de retorno | H9 — Recuperação de erros | Informa que nenhum registro foi encontrado e orienta verificar o cálculo salarial, sem indicar onde realizar essa verificação. | **2 — Menor** | [Figura 5](#figura-5) |
+| [**H-02**](#h-02) | Cálculo Financeiro | Seleção, Tipo de Filtro e Matrícula | H6 — Reconhecimento em vez de memorização | Campos de configuração sem orientações visíveis suficientes sobre o significado das opções e sua combinação. | **2 — Menor** | [Figura 6](#figura-6) |
+| [**H-03**](#h-03) | Pesquisa de Seleção | Coluna Condição | H2 — Correspondência com o mundo real | Expressões técnicas e conteúdo truncado dificultam a compreensão dos critérios de seleção. | **2 — Menor** | [Figura 7](#figura-7) |
+| [**H-04**](#h-04) | Inicialização do Ponto | Botão Inicializar Ponto | H5 — Prevenção de erros | Não apresenta uma explicação visível, antes da execução, sobre quais dados serão afetados pela inicialização. | **3 — Maior (preliminar)** | [Figura 3](#figura-3) |
+| [**H-05**](#h-05) | Fechamento da Folha (funcionalidade relacionada) | Botão “D” | H2 — Correspondência com o mundo real | O botão possui apenas uma letra, sem identificação clara de sua finalidade. | **1 — Cosmético** | [Figura 10](#figura-10) |
+| [**H-06**](#h-06) | Resumo da Folha | Filtros de configuração | H8 — Estética e design minimalista | Diversos filtros aparecem simultaneamente, sem diferenciação visual clara entre campos obrigatórios e opcionais. | **2 — Menor** | [Figura 8](#figura-8) |
 
 ## 2.4. Evidências visuais e justificativas
+
+<a id="h-01"></a>
 
 ### H-01 — Mensagem de retorno sem orientação suficiente
 
@@ -264,6 +304,8 @@ A tabela apresenta os problemas observados nas interfaces relacionadas à jornad
 
 **Relação com a jornada:** H-01 sugere uma dificuldade de continuidade e é compatível com uma dependência funcional entre rotinas. A mensagem não comprova integração técnica entre módulos nem a dependência circular ou recursividade registrada em G3.
 
+<a id="h-02"></a>
+
 ### H-02 — Falta de orientação nos campos do Cálculo Financeiro
 
 **Etapa:** Configuração do cálculo financeiro.
@@ -282,6 +324,8 @@ A tabela apresenta os problemas observados nas interfaces relacionadas à jornad
 
 **Justificativa:** a dificuldade pode surgir sempre que o servidor configura um cálculo sem conhecer previamente os campos. O impacto potencial é selecionar filtros inadequados ou precisar de orientação externa. A ausência de explicações persiste na interface; o achado diz respeito ao esforço de configuração, sem evidência de cálculo incorreto.
 
+<a id="h-03"></a>
+
 ### H-03 — Linguagem técnica na pesquisa de seleções
 
 **Etapa:** Cálculo financeiro — pesquisa de seleção.
@@ -297,6 +341,8 @@ A tabela apresenta os problemas observados nas interfaces relacionadas à jornad
 **Severidade: 2 — Menor.**
 
 **Justificativa:** a dificuldade pode ocorrer quando o servidor consulta seleções cujas condições não aparecem integralmente. O impacto está na interpretação dos critérios utilizados, exigindo conhecimento técnico adicional. O problema persiste na visualização dessas informações, embora as descrições dos grupos ajudem parcialmente na identificação.
+
+<a id="h-04"></a>
 
 ### H-04 — Ausência de orientação prévia sobre a inicialização do ponto
 
@@ -316,6 +362,8 @@ A tabela apresenta os problemas observados nas interfaces relacionadas à jornad
 
 **Limitação:** a severidade é preliminar, pois a operação não foi executada. Não há comprovação de exclusão de dados ou ausência de confirmação posterior.
 
+<a id="h-05"></a>
+
 ### H-05 — Botão com identificação pouco clara
 
 **Etapa:** Fechamento da Folha — funcionalidade relacionada.
@@ -333,6 +381,8 @@ A tabela apresenta os problemas observados nas interfaces relacionadas à jornad
 **Justificativa:** o problema é perceptível sempre que o botão aparece e persiste na interface. O impacto observado limita-se à identificação de sua finalidade, sustentando a classificação 1, sem evidência de impedimento à tarefa.
 
 **Observação:** o Fechamento da Folha foi registrado como funcionalidade relacionada à rotina mensal, não como etapa confirmada da sequência principal do BPMN AS-IS.
+
+<a id="h-06"></a>
 
 ### H-06 — Excesso de filtros na configuração do relatório
 
@@ -384,6 +434,8 @@ As ações documentadas expressam o percurso previsto no processo, não uma exec
 
 <div class="pagina-blueprint">
 
+<a id="figura-11"></a>
+
 ![Figura 11 — Service Blueprint AS-IS individual da folha de pagamento](assets/blueprint/service-blueprint-as-is.svg)
 
 *Figura 11 — Service Blueprint AS-IS individual, elaborado a partir do BPMN do grupo e das evidências das seções 1 e 2, com apoio de IA (2026). Os blocos auxiliares não integram a sequência principal confirmada. Fonte: elaboração individual; SVG editável, sem dependências externas.*
@@ -429,11 +481,23 @@ Os marcadores **C1 a C4** identificam dependências de dados documentadas no BPM
 
 **[OBSERVADO]** Seleção, Tipo de Filtro e Matrícula carecem de orientação suficiente (PF-02/H-02), enquanto a pesquisa apresenta condições técnicas e truncadas (PF-03/H-03). Isso afeta a interpretação da configuração. Não foi demonstrado que esses campos correspondam exatamente à abrangência do BPMN ou que tenham produzido cálculos incorretos.
 
-### 3.3.2. Módulo confirmado e limites dos cruzamentos
+### 3.3.2. Mapa de cruzamentos e módulos identificados
 
 **[OBSERVADO]** O módulo Pessoal, da área de RH, concentra as interfaces examinadas. Cálculo Financeiro é uma funcionalidade desse módulo e Relatórios Financeiros é um agrupamento de menu; seus nomes não comprovam participação da área Financeira ou de Contabilidade. A navegação entre telas e funcionalidades não constitui evidência de cruzamento técnico entre módulos do monólito.
 
 **[DOCUMENTADO]** Cadastros, parametrização, pontos do movimento e resultado financeiro aparecem no BPMN como recursos e dados do processo. Eles não identificam bancos físicos, serviços autônomos ou módulos responsáveis. **[INFERIDO]** Seu uso por diferentes atividades pode exigir compartilhamento ou reaproveitamento de dados, mas propriedade, persistência e mecanismos de acesso precisam de inspeção técnica.
+
+O quadro explicita a origem, o destino e o alcance da confirmação de cada cruzamento. Os identificadores C1–C4 correspondem aos mesmos marcadores da Figura 11.
+
+| ID | Origem → destino no processo | Módulos identificados | Evidência e classificação | Relação com falhas e com o corte |
+| --- | --- | --- | --- | --- |
+| **C1** | Cadastros e parametrização → preparação do movimento e cálculo salarial | Módulo responsável pelos dados não identificado; interfaces relacionadas à jornada localizadas em **Pessoal/RH**. | **[DOCUMENTADO]** Associações de dados no BPMN (Figura 1). Não comprova integração entre módulos. | Os efeitos da inicialização são objeto de H-04/PF-04. A parte de C1 que alimenta o cálculo precisa ter propriedade e consistência definidas antes da extração. |
+| **C2** | Horas extras e faltas do ponto eletrônico → preparação do movimento | Origem técnica do ponto eletrônico não identificada; não foi comprovado um módulo próprio de ponto. | **[DOCUMENTADO]** Entrada de informações na preparação, conforme o BPMN. | Sustenta a preparação dos dados. Permanece fora da responsabilidade proposta para o serviço de cálculo. |
+| **C3** | Pontos do movimento → cálculo do ponto fixo e cálculo salarial | Não foi identificado um módulo de origem distinto de Pessoal; a tela específica do ponto fixo não foi localizada. | **[DOCUMENTADO]** Dependência dos cálculos em relação aos dados do movimento no BPMN. | É uma entrada central do corte. H-01/PF-01 evidencia a dificuldade de orientação entre rotinas relacionadas a ponto e cálculo, sem comprovar o mecanismo técnico de C3. |
+| **C4** | Resultado financeiro concluído → emissão dos relatórios de conferência | As configurações de cálculo e relatórios foram localizadas em **Pessoal/RH**; não há evidência de travessia para Financeiro ou Contabilidade. | **[DOCUMENTADO]** Relação de dados no BPMN; **[OBSERVADO]** interfaces de configuração nas Figuras 6, 8 e 9. | Define a saída esperada do serviço para apoiar a conferência. H-06/PF-06 permanece um problema de configuração da interface de relatório. |
+| **Transição H-01** | Processamento de Dados do Ponto → verificação do cálculo salarial, associada na análise ao Cálculo Financeiro | Ambas as interfaces foram localizadas em **Pessoal/RH**. | **[OBSERVADO]** A mensagem da Figura 5 remete ao cálculo, sem nomear a tela nem oferecer atalho. Seta tracejada na Figura 11. | **H-01/PF-01:** cruzamento entre funcionalidades, com orientação insuficiente. Não é chamada técnica observada nem evidência de G3. |
+
+**Conclusão sobre módulos:** as evidências demonstram dependências de dados e transições entre funcionalidades da jornada, mas não permitem afirmar uma travessia técnica entre dois módulos distintos do monólito. Para confirmar tal travessia, seria necessário identificar o módulo responsável por cada recurso e sua relação com Pessoal em documentação técnica ou rastreamento da execução. Não se atribuem módulos de origem com base apenas nos nomes dos dados ou das telas.
 
 Esses cruzamentos de dados indicam pontos de ligação a investigar como fronteiras de responsabilidade. O corte recomendado na seção 4 incide sobre **C1 e C3**, que alimentam o cálculo com cadastros, parametrização e pontos do movimento. **C4** delimita a entrega do resultado aos relatórios; **C2** pertence à preparação e permanece fora do serviço proposto. A separação desses dados no código ainda exige validação técnica.
 
@@ -464,11 +528,17 @@ A execução completa do cálculo, a geração dos relatórios e a conferência 
 
 A correspondência parcial entre telas e atividades e as inferências de backstage estão explicitadas para distinguir a representação do processo de uma arquitetura técnica validada.
 
-### 3.5.1. Fronteiras a investigar na seção 4
+### 3.5.1. Comparação das fronteiras de responsabilidade
 
-Como hipóteses de análise, e não como decisão de extração, merecem investigação: **preparação dos dados do movimento**, **responsabilidade pelo cálculo salarial** e **produção dos relatórios de conferência**. O BPMN permite distinguir essas responsabilidades, mas não comprova sua separação no código. Devem ser examinados a propriedade de cadastros e parametrização, o compartilhamento dos pontos do movimento, as regras de cálculo, a consistência dos resultados e a dependência dos relatórios em relação ao resultado concluído.
+A escolha do primeiro corte compara três responsabilidades do BPMN. Trata-se de uma análise das evidências de negócio e de UX, não de uma medição de esforço ou de acoplamento do código.
 
-Antes de propor um serviço, será necessário verificar se sua extração introduziria acoplamento remoto, duplicação de regras ou inconsistência de dados. Os problemas H-01 a H-06 orientam necessidades de interface e continuidade, mas não demonstram uma fronteira arquitetural pronta. Extrair o cálculo não resolveria automaticamente a orientação dos campos, a linguagem técnica, a prevenção de erros ou a hierarquia visual das telas.
+| Responsabilidade | Evidências e relação com o job do servidor | Implicação para a prioridade de extração |
+| --- | --- | --- |
+| Preparação do movimento | C1 e C2 alimentam a preparação; H-04/PF-04 e G2 apontam a importância de compreender os efeitos da inicialização. | A evidência sustenta orientação e prevenção de erros na interface. Isoladamente, não demonstra vantagem em extrair essa rotina primeiro. |
+| Processamento do cálculo | C1 e C3 alimentam a etapa 4; C4 entrega o resultado para os relatórios. G1/G3 localizam riscos no processamento; H-01/PF-01 mostra uma transição sem orientação para verificar o cálculo. | É o primeiro corte recomendado: concentra a responsabilidade de produzir um resultado que permite avançar no job, com acompanhamento a ser oferecido pela interface. Sua viabilidade depende da validação técnica. |
+| Emissão de relatórios | C4 liga o resultado calculado à emissão e à conferência. H-06/PF-06 incide na organização visual dos filtros. | A melhoria de filtros pode ocorrer na interface. As evidências disponíveis não a tornam prioritária em relação ao cálculo como primeira extração. |
+
+O recorte recomendado separa a responsabilidade de processar o cálculo da preparação dos dados e da apresentação dos relatórios. Não pressupõe tabelas independentes ou componentes já isolados. Antes de implementá-lo, será necessário verificar propriedade de dados, regras compartilhadas, consistência, limites transacionais e risco de acoplamento remoto. O corte não substitui as melhorias específicas de UX que o job exige.
 
 <section class="pagina-proposta">
 
@@ -484,11 +554,15 @@ Na avaliação, H-01/PF-01 mostra que a mensagem de Processamento de Dados do Po
 
 O serviço receberia competência, tipo de folha e abrangência, obteria os dados necessários e aplicaria as regras salariais existentes, produzindo um resultado identificável. Cadastros, manutenção de rubricas, preparação do movimento e apresentação dos relatórios permaneceriam fora dessa responsabilidade. O contrato e a propriedade dos dados ainda precisam de validação técnica.
 
+O benefício seria verificado pela capacidade de localizar o cálculo, reconhecer seu estado e retomar a jornada, além da equivalência dos resultados com o legado. Esses são critérios propostos para validação futura, não resultados de testes realizados.
+
 Como benefício potencial, o serviço poderia expor estados explícitos — em andamento, concluído e interrompido — para a interface informar a situação do cálculo e orientar a continuidade. Isso apoiaria parcialmente H-01 e o acompanhamento diante da demora relatada em G1, desde que a interface consumisse esses estados e oferecesse orientação de navegação. São comportamentos propostos, não observados no AS-IS. O isolamento da execução também permitiria manutenção mais direcionada do cálculo, sem garantir desempenho superior.
 
 ## 4.3. Critério técnico contrário e problemas não resolvidos
 
 O principal critério contrário é o **possível acoplamento a cadastros, parametrização, pontos do movimento e regras salariais**. Sem esclarecer propriedade, atualização e consistência, a extração poderia gerar chamadas remotas excessivas e resultados divergentes. G3 exige investigar as dependências do cálculo; não comprova uma relação causal com H-01.
+
+**Critério de veto:** se a execução exigir alterações atômicas compartilhadas com a preparação que não possam ser preservadas na separação, o cálculo deverá permanecer no monólito até a resolução dessa dependência.
 
 Entre os problemas avaliados, o corte poderia **apoiar apenas parcialmente H-01**, mediante melhorias de interface. Não resolveria automaticamente H-02 (orientação dos campos), H-03 (linguagem técnica), H-04 (prevenção de erros), H-05 (botão “D”) ou H-06 (organização dos filtros). **Recomenda-se, portanto, a extração do Processamento da Folha, condicionada à verificação prévia das dependências de dados, dos limites transacionais e da equivalência dos resultados salariais.**
 
